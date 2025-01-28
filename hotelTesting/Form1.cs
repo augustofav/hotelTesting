@@ -54,17 +54,20 @@ namespace hotelTesting
                     conexao.Open();
 
                     string query = @"
-                    CREATE TABLE IF NOT EXISTS Produtos (
+                    CREATE TABLE IF NOT EXISTS Hotels (
                         Id INTEGER PRIMARY KEY AUTOINCREMENT,
                         Nome TEXT NOT NULL,
                         Preco REAL NOT NULL,
-                        Quantidade INTEGER NOT NULL
+                        Disponivel BOOLEAN NOT NULL,
+                          
                     );";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conexao))
                     {
                         cmd.ExecuteNonQuery();
                     }
+                   Hotel hotel = new Hotel();
+
                 }
             }
         }
